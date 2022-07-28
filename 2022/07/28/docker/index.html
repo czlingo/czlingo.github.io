@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>docker - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="DockerLinux ProcLinux 下 /pr...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+    </div>
+    <div class="center">docker</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">docker</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>July 28, 2022</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2628</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        
+        <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="Linux-Proc"><a href="#Linux-Proc" class="headerlink" title="Linux Proc"></a>Linux Proc</h2><p>Linux 下 <code>/pric</code> 文件系统是有内核提供的，并不是一个真正的文件系统，只包含了系统运行时的信息(比如系统内存、mount设备信息、一些硬件配置等)，它只存在与内存中，而不占用外存空间。它以文件系统的形式，为访问内核数据的操作提供接口。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x2F;proc&#x2F;N</td>
+<td>PID为N的进程信息</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;cmdline</td>
+<td>进程启动命令</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;cwd</td>
+<td>链接到进程当前工作目录</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;environ</td>
+<td>进程环境变量列表</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;exe</td>
+<td>链接到进程的执行命令文件</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;fd</td>
+<td>包含进程相关的所有文件描述符</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;maps</td>
+<td>与进程相关的内存映射信息</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;mem</td>
+<td>指代进程持有的内存</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;root</td>
+<td>链接到进程的根目录</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;stat</td>
+<td>进程的状态</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;statm</td>
+<td>进程使用的内存状态</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;N&#x2F;status</td>
+<td>进程状态信息，比stat&#x2F;statm更具可读性</td>
+</tr>
+<tr>
+<td>&#x2F;proc&#x2F;self</td>
+<td>链接到当前正在运行的进程</td>
+</tr>
+</tbody></table>
+<h2 id="Linux-Namespace"><a href="#Linux-Namespace" class="headerlink" title="Linux Namespace"></a>Linux Namespace</h2><h3 id="UTS-Namespace"><a href="#UTS-Namespace" class="headerlink" title="UTS Namespace"></a>UTS Namespace</h3><p>UTS Namespace主要用来隔离主机名(hostname)和域名(domainname)两个系统标识。能够使得子进程有独立的主机名和域名(hostname)，这一特性在Docker容器技术中被用到，使得docker容器在网络上被视作一个独立的节点，而不仅仅是宿主机上的一个进程。其中主机名(hostname)、域名(domainname)是可以被修改的，其他只能被读取。UTS 的主要作用就是给用户态、内核态提供这些信息。</p>
+<h3 id="IPC-Namespace"><a href="#IPC-Namespace" class="headerlink" title="IPC Namespace"></a>IPC Namespace</h3><p>IPC Namespace是对进程间通信的隔离，进程间通信常见的方法有信号量、消息队列和共享内存。IPC Namespace主要针对的是System V IPC和POSIX消息队列，这些IPC机制都会用到标识符，比如用标识符来区分不同的消息队列，IPC Namespace要达到的目标是相同的标识符在不同的Namepspace中代表不同的通信介质(比如信号量、消息队列和共享内存)。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ipcs</span>  用于查看当前使用的共享内存、消息队列及信号量信息<br>ipcmk 用于创建共享内存段、消息队列或信号灯数组等进程间通信（IPC）资源<br></code></pre></td></tr></table></figure>
+
+<h3 id="PID-Namespace"><a href="#PID-Namespace" class="headerlink" title="PID Namespace"></a>PID Namespace</h3><p>PID Namespace是用来隔离进程ID的。同样一个进程在不同的PID Namespace里可以拥有不同的PID.</p>
+<h3 id="Mount-Namespace"><a href="#Mount-Namespace" class="headerlink" title="Mount Namespace"></a>Mount Namespace</h3><p>Mount Namespace用来隔离各个进程看到的挂载点视图。在不同Namespace的进程中，看到的文件系统层次是不一样的。进程的mount namespace中的挂载点信息可以在 &#x2F;proc&#x2F;[pid]&#x2F;mounts、&#x2F;proc&#x2F;[pid]&#x2F;mountinfo 和 &#x2F;proc&#x2F;[pid]&#x2F;mountstats 这三个文件中找到。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">mount</span> -t <span class="hljs-meta">proc</span> <span class="hljs-meta">proc</span> /<span class="hljs-meta">proc</span> #将<span class="hljs-meta">proc</span>虚拟文件系统挂载到 /<span class="hljs-meta">proc</span> 目录下<br></code></pre></td></tr></table></figure>
+
+<h3 id="User-Namespace"><a href="#User-Namespace" class="headerlink" title="User Namespace"></a>User Namespace</h3><p>User Namespace隔离用户的用户组ID。一个进程的User ID和Group ID在User Namespace内外可以是不同的。</p>
+<h3 id="NetWork-Namespace"><a href="#NetWork-Namespace" class="headerlink" title="NetWork Namespace"></a>NetWork Namespace</h3><p>Network Namespace用来隔离网络设备、IP地址端口等网络栈。可以让每个容器拥有自己独立的(虚拟的)网络设备，而且容器内的应用可以绑定到自己的端口。</p>
+<h2 id="Linux-Cgroups"><a href="#Linux-Cgroups" class="headerlink" title="Linux Cgroups"></a>Linux Cgroups</h2><p>Linux Cgroups(Control Groups)提供了对一组进程及将来子进程的资源限制、控制和统计能力，包括CPU、内存、存储、网络等。Cgroups主要由task,cgroup,subsystem及hierarchy构成。</p>
+<p>cgroup是对进程分组管理的一种机制，一个cgroup包含一组进程，并可以在这个cgroup上增加Linux subsystem的各种参数配置，将一组进程和一组subsystem的系统参数关联起来。</p>
+<p>subsystem是一组资源控制的模块，一般包含如下几项：</p>
+<ul>
+<li>blkio:设置对块设备(比如硬盘)输入输出的访问控制</li>
+<li>cpu:设置cgroup中进程的CPU被调度的策略</li>
+<li>cpuacct:可以统计cgroup中进程的CPU占用</li>
+<li>cpuset:在多核机器上设置cgroup中进程可以使用的CPU和内存</li>
+<li>devices:控制cgroup中进程对设备的访问</li>
+<li>freezer:用于挂起(suspend)和恢复(resume)cgroup中的进程</li>
+<li>memory:用于控制cgroup中进程的内存占用</li>
+<li>net_cls:用于将cgroup中进程产生的网络包分类，以便Linux的tc(traffic controller)可以根据分类区分出来自某个cgroup的包并做限流和监控</li>
+<li>net_prio:设置cgroup中进程产生的网络流量的优先级</li>
+<li>ns:使cgroup中的进程在新的Namespace中fork新进程(NEWNS)时，创建出一个新的cgroup，这个cgroup包含新的Namespace中的进程</li>
+</ul>
+<p>hierarchy的功能是把一组cgroup串成一个树状结构，通过这种树状结构，Cgroups可以做到继承。</p>
+<p>一个subsystem只能附加到一个hierarchy上面，一个hierarchy可以附加多个subsystem。一个进程可以作为多个cgroup的成员，但这个cgroup必须在不同的hierarchy中。fork出子进程时，子进程是和父进程在同一个cgroup中，可以根据需要移动到其他cgroup中。</p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2022/07/28/docker/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;07&#x2F;28&#x2F;docker&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2022&#x2F;07&#x2F;28&#x2F;docker&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag">容器</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2022/07/28/Test/">Test<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker"><span class="toc-text">Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-Proc"><span class="toc-text">Linux Proc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-Namespace"><span class="toc-text">Linux Namespace</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UTS-Namespace"><span class="toc-text">UTS Namespace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPC-Namespace"><span class="toc-text">IPC Namespace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PID-Namespace"><span class="toc-text">PID Namespace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mount-Namespace"><span class="toc-text">Mount Namespace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#User-Namespace"><span class="toc-text">User Namespace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NetWork-Namespace"><span class="toc-text">NetWork Namespace</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-Cgroups"><span class="toc-text">Linux Cgroups</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="https://github.com/czlingo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
