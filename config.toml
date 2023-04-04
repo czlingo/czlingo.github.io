@@ -1,7 +1,7 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'Pods'
-theme = 'paper'
+theme = 'paperMod'
 
 disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
 
