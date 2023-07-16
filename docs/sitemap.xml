@@ -4,11 +4,15 @@
   <url>
     <loc>https://czlingo.github.io/categories/</loc>
   </url><url>
+    <loc>https://czlingo.github.io/categories/kubernetes/</loc>
+  </url><url>
     <loc>https://czlingo.github.io/</loc>
   </url><url>
     <loc>https://czlingo.github.io/posts/photos/</loc>
   </url><url>
     <loc>https://czlingo.github.io/posts/</loc>
+  </url><url>
+    <loc>https://czlingo.github.io/posts/rbac/</loc>
   </url><url>
     <loc>https://czlingo.github.io/tags/</loc>
   </url>

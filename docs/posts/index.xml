@@ -15,5 +15,17 @@
       <description></description>
     </item>
     
+    <item>
+      <title>RBAC</title>
+      <link>https://czlingo.github.io/posts/rbac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://czlingo.github.io/posts/rbac/</guid>
+      <description>在 Kubernetes 中，RBAC 是负责完成授权工作的机制(基于角色的访问控制(Role-Based Access Control))
+在 RBAC 体系中有三个核心的概念：
+Role： 角色， 它其实是一组规则，定义了一组对 Kubernetes API 对象的操作权限。 Subject： 被作用者， 既可以是“人”， 也可以是“机器”， 也可以是你在 Kubernetes 里定义的 “用户”。 RoleBinding： 定义了 “被作用者” 和 “角色” 的绑定关系。 Role Role 本身是一个 Kubernetes 中的 API 对象：
+apiVersion: rbac.authorization.k8s.io/v1 kind: Role metadata: namespace: mynamespace name: pod-reader rules: - apiGroups: [&amp;#34;&amp;#34;] resources: [&amp;#34;pods&amp;#34;] verbs: [&amp;#34;get&amp;#34;, &amp;#34;watch&amp;#34;, &amp;#34;&amp;#34;list] 这个例子中描述了一个角色，它作用于 mynamespace 的 Namespace 中， 允许 “被作用者” 对 mynamespace 中的 Pod 对象， 进行 GET、 WATCH 和 LIST 操作。</description>
+    </item>
+    
   </channel>
 </rss>
