@@ -1,6 +1,6 @@
 baseURL: 'https://czlingo.github.io'
-languageCode: 'en-us'
-title: 'My New Hugo Site'
+languageCode: 'zh-cn'
+title: 'czlingo blog'
 theme: 'paper'
 
 enableRobotsTXT: true
@@ -46,7 +46,7 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Home"
+    text: "主页"
     icon: /apple-touch-icon.png
     iconHeight: 35
 
@@ -67,8 +67,8 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: "嗨！ \U0001F44B"
+    Content: 不敢高声语，恐惊天上人。
 
   socialIcons:
     - name: github
@@ -97,13 +97,14 @@ params:
 menu:
   main:
     - identifier: categories
-      name: categories
+      name: 分类
       url: /categories/
       weight: 10
     - identifier: tags
-      name: tags
+      name: 标签
       url: /tags/
       weight: 20
+      
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
