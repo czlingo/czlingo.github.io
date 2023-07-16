@@ -48,38 +48,23 @@ params:
   defaultContentLanguage: zh
 
   label:
-    text: "主页"
+    text: "Home"
     icon: /apple-touch-icon.png
     iconHeight: 35
-
-  # profile-mode
-  profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
-    buttons:
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
 
   # home-info mode
   homeInfoParams:
     Title: "嗨！ \U0001F44B"
     Content: 不敢高声语，恐惊天上人。
 
-  socialIcons:
-    - name: github
-      url: "https://github.com/"
+  # socialIcons:
+  #   - name: github
+  #     url: "https://github.com/"
 
-  cover:
-    hidden: true # hide everywhere but not in structured data
-    hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
+  # cover:
+  #   hidden: true # hide everywhere but not in structured data
+  #   hiddenInList: true # hide on list pages and home
+  #   hiddenInSingle: true # hide on single page
 
   editPost:
     URL: "https://github.com/<path_to_repo>/content"
@@ -96,14 +81,15 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
+
 menu:
   main:
     - identifier: categories
-      name: 分类
+      name: categories
       url: /categories/
       weight: 10
     - identifier: tags
-      name: 标签
+      name: tags
       url: /tags/
       weight: 20
       
