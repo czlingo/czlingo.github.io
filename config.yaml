@@ -45,6 +45,8 @@ params:
     apple_touch_icon: "<link / abs url>"
     safari_pinned_tab: "<link / abs url>"
 
+  defaultContentLanguage: zh
+
   label:
     text: "主页"
     icon: /apple-touch-icon.png
