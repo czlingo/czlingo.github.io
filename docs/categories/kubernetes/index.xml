@@ -7,6 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language><atom:link href="https://czlingo.github.io/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>FlexVolume</title>
+      <link>https://czlingo.github.io/posts/flexvolume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://czlingo.github.io/posts/flexvolume/</guid>
+      <description>在 Kubernetes 中，存储插件的开发有两种方式： FlexVolume 与 CSI。
+本篇文章主要讲述 FlexVolume， 通过使用 NFS 实现 FlexVolume 插件，了解 FlexVolume 的原理和使用方法。
+对于一个 FlexVolume 类型的 PV 来说， 它的 YAML 文件如下所示：
+apiVersion: v1 kind: PersistentVolume metadata: name: pv-flex-nfs spec: capacity: storage: 10Gi accessMode: - ReadWrtieMany flexVolume: driver: &amp;#34;k8s/nfs&amp;#34; fsType: &amp;#34;nfs&amp;#34; options: server: &amp;#34;172.17.0.2&amp;#34; 这个 PV 定义的 Volume 类型是 flexVolume。并且，指定了这个 Volume 的 driver 叫作 k8s/nfs。
+而 Volume 的 options 字段，则是一个自定义字段。它的类型其实是 map[string]string。所以可以在 options 中加入想要自定义的参数。
+当这个 PV 被创建与某个 PVC 绑定时，就会进入到 Volume 处理流程，这个流程中有两阶段处理，即“Attach阶段” 和 “Mount阶段”。它们的作用是在 Pod 所绑定的宿主机上，完成这个 Volume 目录的持久化过程，比如为虚拟机挂载磁盘(Attach)，或者挂在一个 NFS 的共享目录(Mount)。</description>
+    </item>
+    
+    <item>
       <title>RBAC</title>
       <link>https://czlingo.github.io/posts/rbac/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
