@@ -153,6 +153,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>CSI
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>通过 FlexVolume 已经能够实现存储插件的扩展，那为什么还需要 CSI 这种方式呢？在 FlexVolume 文章中可以主要到，每一次对 FlexVolume 插件的调用都是一次完全独立的操作。而如果需要保存一些重要的信息，就只能将这些信息写入到宿主机的临时文件里，等到 unmount 的阶段的时候再去读取。
+这也是为什么需要 Container Storage Interface(CSI) 这样更完善、更编程友好的插件方式。
+在上述体系下，无论是FlexVolume，还是 Kubernetes 内置的其他存储插件，实际上单人的角色，仅仅是 Volume 管理中的 “Attach阶段” 和 “Mount阶段” 的具体执行者。而像 Dynamic Provisioning 这样的功能，就不是存储插件的责任，而是 Kubernetes 本身存储管理功能的一部分。
+CSI 插件体系的设计思想，就是把这个 Provision 阶段，以及 Kubernetes 里的部分存储管理功能，从主干代码里剥离出来，做成几个单独的组件。
+这套存储插件体系多了三个独立的外部组件(External Componenets)，包括Driver Registrar、External Provisioner 及 External Attacher。而最右侧的部分则是需要我们编写代码来实现的 CSI 插件。通过 gRPC 的方式对外提供三个服务，分别是：CSI Identity、 CSI Controller 和 CSI Node。
+对于 External Components，其中 Driver Register 组件，负责将插件注册到 kubelet 里(可以类比为，将可执行文件放在插件目录下)。 而在具体实现上， Driver Registrar 需要请求 CSI 插件的 Identity 服务来获取插件信息。
+External Provisioner 组件，负责的正是 Provision 阶段。 在具体实现上，External Provisioner 监听(Watch) 了 API Server 里的 PVC 对象。当一个 PVC 被创建时，它就会调用 CSI Controller 的 CreateVolume 方法，为你创建对应的 PV。此外，如果你使用的存储是公有云提供的磁盘(或者块设备)的话，这一步就需要调用公有云(或者是块设备服务)的 API 来创建这个 PV 所描述的磁盘(或者块设备)。由于 CSI 插件是独立于 Kubernetes 之外的，所以在 CSI 的 API 里不会直接使用 Kubernetes 定义的 PV 类型，而是会自已定义一个单独的 Volume 类型。...</p>
+  </div>
+  <footer class="entry-footer">3 min&nbsp;·&nbsp;625 words&nbsp;·&nbsp;Me</footer>
+  <a class="entry-link" aria-label="post link to CSI" href="https://czlingo.github.io/posts/csi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>FlexVolume
     </h2>
   </header>
